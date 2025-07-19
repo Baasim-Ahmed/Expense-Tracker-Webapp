@@ -1,0 +1,11 @@
+<a href="{% url 'add_transaction' %}">+ Add New Transaction</a>
+{% extends "tracker/base.html" %}
+{% block content %}
+<h2>Add Transaction</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add</button>
+</form>
+<a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+{% endblock %}
